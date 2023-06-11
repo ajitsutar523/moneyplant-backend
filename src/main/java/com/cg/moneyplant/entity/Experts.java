@@ -1,8 +1,9 @@
 package com.cg.moneyplant.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -17,13 +18,15 @@ public class Experts {
     private String Lastname;
     private String emailId;
     private String communityProfile;
-    private String speciality;
+    private String title;
     private long mobile;
     private long ratings;
     private long reviews;
     private double experience;
+    private String education;
     private double fees;
-    private String bio;
+    private String tags;
+    @JsonIgnore
     @OneToMany(mappedBy = "experts")
     private List<Enquiry> enquiry;
 }

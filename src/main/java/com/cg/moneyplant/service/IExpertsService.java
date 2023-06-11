@@ -9,5 +9,6 @@ public interface IExpertsService {
     public Experts insertExpert(Experts experts) throws Exception;
     public Experts updateExpert(Experts experts) throws Exception;
     public List<Experts> getAllExperts() throws Exception;
-    public List<Experts> getSpecificExperts(String speciality) throws Exception;
+    public List<Experts> findByTags(String tags) throws Exception;
+    public List<Experts> fingByTitle(String title) throws Exception;
 }

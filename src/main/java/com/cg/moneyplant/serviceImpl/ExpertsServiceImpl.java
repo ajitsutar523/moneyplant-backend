@@ -17,20 +17,21 @@ public class ExpertsServiceImpl implements IExpertsService {
         if(experts==null) throw new Exception("Null Data");
         return expertdao.save(experts);
     }
-
     @Override
     public Experts updateExpert(Experts experts) throws Exception {
         if(expertdao.save(experts)==null) throw new Exception("Error Occured");
         return experts;
     }
-
     @Override
     public List<Experts> getAllExperts() throws Exception {
         return expertdao.findAll();
     }
-
     @Override
-    public List<Experts> getSpecificExperts(String speciality) throws Exception {
-        return expertdao.findAllByspeciality(speciality);
+    public List<Experts> findByTags(String tag) throws Exception {
+        return expertdao.findAllByTags(tag);
+    }
+    @Override
+    public List<Experts> fingByTitle(String title) throws Exception {
+        return expertdao.findAllByTitle(title);
     }
 }
