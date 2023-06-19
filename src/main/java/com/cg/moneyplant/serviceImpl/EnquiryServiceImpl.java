@@ -7,6 +7,8 @@ import com.cg.moneyplant.service.IEnquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EnquiryServiceImpl implements IEnquiryService {
     @Autowired
@@ -22,5 +24,15 @@ public class EnquiryServiceImpl implements IEnquiryService {
     @Override
     public Integer updateEnquiryMessage(int enquiryId,String message) throws Exception {
         return enquiryDao.updateEnquirySetMessageForId(enquiryId,message);
+    }
+
+    @Override
+    public Enquiry updateEnquiry(Enquiry enquiry) throws Exception {
+        return enquiryDao.save(enquiry);
+    }
+
+    @Override
+    public List<Enquiry> getAllEnquiry() throws Exception {
+        return enquiryDao.findAll();
     }
 }

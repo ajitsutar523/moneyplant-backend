@@ -19,6 +19,7 @@ public class Enquiry {
     private long mobile;
     private String email;
     private String message;
+    private boolean offers;
     @ManyToOne(cascade = CascadeType.ALL)
     private Experts experts;
 

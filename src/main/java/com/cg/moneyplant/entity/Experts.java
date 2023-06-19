@@ -14,8 +14,8 @@ public class Experts {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String FirstName;
-    private String Lastname;
+    private String firstName;
+    private String lastName;
     private String emailId;
     private String communityProfile;
     private String title;
